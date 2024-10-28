@@ -1,0 +1,504 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: "wedding";
+  src: url(../font/Wedding.ttf);
+}
+// variabel
+$color: rgb(248, 204, 129);
+@mixin title {
+    .box_title {
+      text-align: center;
+      color: $color;
+    h2 {
+      font-family: "wedding";
+      font-size: 2.3rem;
+      font-weight: 100;
+    }
+    p{  
+        font-size:1rem;
+    }
+  }
+}
+@mixin mandala($posisi) {
+}
+
+// style
+* {
+  font-family: poppins;
+  font-size: 1.1rem;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 546px;
+  background-color: white;
+  margin: auto;
+  overflow: hidden;
+}
+
+// pembuka 
+.pembuka{
+position: absolute;
+inset: 0;
+  transition: all .8s;
+  background-image: url(../img/bg.png);
+  z-index: 99999;
+  .pembuka_bg{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%);
+    color: $color;
+    h1{
+      margin: 0 0 40px 0;
+      font-family: 'wedding';
+      font-weight: 100;
+      font-size:4rem;
+    }
+
+    button{
+      text-decoration: none;
+      background-color: $color;
+      padding: 10px 20px;
+      color: #000;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    img{
+      width: 220px;
+      height: 220px;
+    }
+  }
+}
+.hilang{
+ display: none;
+}
+
+
+header {
+  .hero {
+    .box_hero {
+      height: 100vh;
+      position: relative;
+      animation: bgimg 30s ease-in infinite;
+      .box_hero_nama {
+        position: absolute;
+        transform: translateX(-50%);
+        top: 25%;
+        left: 50%;
+        text-align: center;
+        width: 100%;
+        color: $color;
+        h1 {
+          font-family: "wedding";
+          font-size: 3rem;
+          font-weight: 100;
+        }
+        h3 {
+          font-weight: 500;
+          line-height: 60px;
+        }
+      
+        h2::after {
+          content: "";
+          display: block;
+          margin: 10px auto;
+          width: 100px;
+          height: 3px;
+          background-color: $color;
+        }
+        p {
+          margin-bottom: 30px;
+          line-height: 30px;
+        }
+        h2 {
+          font-size: 2rem;
+          font-weight: 500;
+        }
+      }
+    }
+    .box_hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.395),
+        rgba(0, 0, 0, 0.606)
+      );
+    }
+  }
+}
+
+// caption
+.caption{
+    .box_caption{
+        padding: 40px 20px;
+        background-image: url(../img/bg.png);
+        color: $color;
+        text-align: center;
+        p{
+            font-size:.9rem;
+        }
+        h2{
+            font-size:1.4rem;
+        }
+        h2::after{
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: $color;
+            margin: auto;
+        }
+    }
+}
+// about
+.about{
+    .box_about{
+        padding: 20px;
+        background-image: url(../img/bg.png);
+        @include title();
+        .pria,.wanita{
+            margin: 40px 0;
+            text-align: center;
+            color: $color;
+            box-shadow: 0 0 10px black;
+            padding: 30px;
+            border-radius: 10px;
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .box_img{
+                overflow: hidden;
+                border-radius:50% ;
+                margin:auto;
+                margin-top: 30px;
+                width: 160px;
+                height: 160px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            h2{
+                font-family: 'wedding';
+                color:$color;
+                font-size:4rem;
+                font-weight: 100;
+                margin-bottom: 20px;
+            }
+            h3{
+                font-size:2rem;
+                margin-bottom: 10px;
+            }
+            .ibu{
+                margin-bottom: 30px;
+            }
+            a{
+                padding: 10px 20px;
+                background-color: $color;
+                text-decoration: none;
+                color: brown;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+// date
+.date {
+  .box_date {
+    padding: 20px;
+    position: relative;
+    background-image: url(../img/bg.png);
+    .caption {
+      padding: 30px;
+      text-align: center;
+      color: $color;
+      h2 {
+        font-family: "wedding";
+        font-size: 2.8rem;
+        font-weight: 100;
+        margin: 0 0 20px 0;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .event {
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 0 10px black;
+      border-radius: 20px;
+      .akad,
+      .resepsi {
+        text-align: center;
+        color: $color;
+        @include title();
+
+        h3 {
+          font-size: 1.4em;
+          margin: 5px 0 !important;
+        }
+        h4::after {
+          content: "";
+          display: block;
+          width: 100px;
+          margin: 10px auto;
+          height: 3px;
+          background-color: $color;
+        }
+        h4 {
+          font-size: 1.3rem;
+          margin: 6px 0 !important;
+        }
+        p {
+          font-size: 1rem;
+        }
+        a {
+          color: black;
+          padding: 7px 20px;
+          text-decoration: none;
+          border-radius: 20px;
+          background-color: $color;
+        }
+      }
+      .box_img {
+        margin: 20px;
+        height: 150px;
+        width: 300px;
+        overflow: hidden;
+        margin: 50px auto;
+        img {
+          width: 100%;
+          height: 100%;
+          margin: 0 !important;
+          object-fit: cover;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}
+
+// story
+.story{
+    .box_story{
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        padding: 20px;
+        background-image: url(../img/bg.png);
+        @include title();
+
+        .cerita{
+            margin-top: 30px;
+           .box_cerita{
+            text-align: center;
+            margin: 20px;
+            color: $color;
+            h3{
+                font-family: 'wedding';
+                font-size:1.5rem;
+                font-weight: 600;
+            }
+            h3::after{
+                content: '';
+                display: block;
+                width: 20%;
+                margin: 10px auto;
+                height: 3px;
+                background-color: $color;
+            }
+            p{
+                font-size:.9rem;
+            }
+           }
+        }
+    }
+}
+
+// galeri
+.galeri{
+    .box_galeri{
+        padding: 20px;
+        background-image: url(../img/bg.png);
+        @include title();
+        
+        .foto{
+            margin: 50px 0;
+            .video{
+                width: 100%;
+                height: 320px;
+                iframe{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .kumpulan_foto{
+            display: grid;
+            margin-top: 20px;
+            gap: 10px;
+            grid-template-columns: repeat(2,1fr);
+           div{
+            border-radius: 10px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+           }
+        }
+    }
+}
+
+// rsvp
+.rsvp{
+    .box_rsvp{
+        padding: 20px;
+        background-image: url(../img/bg.png);
+        @include title();
+        form{
+            .nama,.email,.ucapan{
+                label{
+                    display: block;
+                    color: $color;
+                }
+                margin: 20px 0;
+                input,textarea{
+                    width: 100%;
+                }
+            }
+            .konfirmasi{
+                color: $color;
+             label{
+                font-size:17px;
+             }
+                input{
+                    accent-color: $color;
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            button{
+                margin-top: 20px;
+                background-color: $color;
+                color: brown;
+                font-weight: 600;
+                width: 130px;
+                border: none;
+                padding: 8px 5px;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+// footer
+footer{
+    .box_footer{
+        text-align: center;
+        color:$color;
+        padding: 10px 20px;
+        background-color: #303030;
+        a{
+            text-decoration: none;
+            color:brown;
+            font-size:.9rem;
+        }
+        p{
+            font-size:.9rem;
+        }
+    }
+}
+
+.musik{
+  .box_musik{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99999;
+    .icon{
+      cursor: pointer;
+      color: $color;
+      i{
+        font-size:2rem;
+      }
+    }
+  }
+}
+// mandala
+.mandala_atas {
+  width: 100%;
+  margin-top: -50px;
+}
+
+@media screen and (max-width: 390px) {
+  header {
+    .hero {
+      .box_hero {
+        .box_hero_nama {
+          top: 28%;
+          h2::before,
+          h2::after {
+            width: 50px;
+          }
+          P {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  .about{
+    .box_about{
+        .pria,.wanita{
+            margin: 30px 0;
+            h3{
+                font-size:1.4rem;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+  .date {
+    .box_date {
+      h2 {
+        font-size: 1.8rem;
+      }
+      P {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+}
+
+@keyframes bgimg {
+  0%,
+  100% {
+    background: url(../img/1.jpg) no-repeat center / cover;
+  }
+  25% {
+    background: url(../img/2.jpg) no-repeat center / cover;
+  }
+  50% {
+    background: url(../img/3.jpg) no-repeat center / cover;
+  }
+  75% {
+    background: url(../img/5.jpg) no-repeat center / cover;
+  }
+}
